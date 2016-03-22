@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.2.1_a3eab5bf77ac0b8c96dc2b3ed306a1c8c60a6403.jar" />
+    </item>
+    <item
+        jar="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.2.1_5da7fd81b835328d13d3a0d0fb6b9c89bff94dde.jar" />
+    </item>
+    <item
+        jar="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appindexing-8.1.0_5272868de77ea9d7be0b1e0f7ac69bad503424e8.jar" />
+    </item>
+    <item
+        jar="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.2.1_4cc0623e10499e30f28578d9e09ea2a4f6255d49.jar" />
+    </item>
+    <item
+        jar="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-8.1.0_6338870e030198881c64434bb5824b6b3163e50b.jar" />
+    </item>
+    <item
+        jar="/Users/jbuzzi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/pre-dexed/debug/support-annotations-23.2.1_009ae37c8cff7afa0a1d2ad154caabe9c924c7a8.jar" />
+    </item>
+    <item
+        jar="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.2.1_cb7c59c35e2bf694120b28623a77db6913b53e89.jar" />
+    </item>
+    <item
+        jar="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/exploded-aar/com.android.support/design/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
+        <dex dex="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.2.1_e007bf3bc2fd7de5d8267ac8b4d507c01cc41f83.jar" />
+    </item>
+    <item
+        jar="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/pre-dexed/debug/internal_impl-23.2.1_836039ef1af4a72ae890d8fde9d43770c0b6a686.jar" />
+    </item>
+    <item
+        jar="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="/Users/jbuzzi/Personal/CS683/BU_Eats/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.2.1_37c14e0d496116107667932286794773af163d09.jar" />
+    </item>
+
+</items>
