@@ -7,7 +7,12 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.GridView;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.content.Intent;
 import java.util.Date;
 import java.util.Calendar;
 import java.text.DateFormat;
@@ -52,6 +57,23 @@ public class MainActivity extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        //Set up restaurant grid view
+        GridView gridview = (GridView) findViewById(R.id.gridview);
+        gridview.setAdapter(new ImageAdapter(this));
+
+        //On item click
+        gridview.setOnItemClickListener(new OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id){
+                // Send intent to Detail Activity
+                Intent i = new Intent(getApplicationContext(), DetailActivity.class);
+
+                // Pass image index
+                i.putExtra("id", position);
+                startActivity(i);
+            }
+        });
+
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.

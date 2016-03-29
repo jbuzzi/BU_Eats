@@ -1,13 +1,24 @@
 package com.cs683.jbuzzi.bu_eats;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 
-public class DetailActivity extends AppCompatActivity {
-
+public class DetailActivity extends Activity {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        // Get intent data
+        Intent i = getIntent();
+
+        // Selected image id
+        int position = i.getExtras().getInt("id");
+        ImageAdapter imageAdapter = new ImageAdapter(this);
+
+        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        imageView.setImageResource(imageAdapter.mThumbIds[position]);
     }
 }
