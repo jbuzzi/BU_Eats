@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">BU Eats</string>
-    <string name="action_settings">Settings</string>
+    <string name="title_activity_favorite">FavoriteActivity</string>
 </resources>

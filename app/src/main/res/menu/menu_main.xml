@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.cs683.jbuzzi.bu_eats.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_favorites"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="Favorites"
         app:showAsAction="never" />
 </menu>

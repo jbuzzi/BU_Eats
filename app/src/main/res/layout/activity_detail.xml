@@ -53,16 +53,31 @@
         android:secondaryProgressTint="#EEE40A"
         android:isIndicator="true"
         android:numStars="5"
-        android:rating="4.5"
+        android:rating="0"
         android:stepSize="0.5"/>
 
     <Button
-        android:id="@+id/restaurantDirections"
-        android:layout_width="wrap_content"
+        android:id="@+id/favorite"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/resturantRatingBar"
-        android:paddingLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:text="Set as Favorite"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:onClick="setAsFavorite"/>
+
+    <Button
+        android:id="@+id/restaurantDirections"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resturantRatingBar"
+        android:layout_marginTop="10dp"
         android:text="Get Directions"
-        android:layout_marginLeft="15dp" />
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:onClick="getDirections"/>
 
 </LinearLayout>

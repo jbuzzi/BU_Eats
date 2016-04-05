@@ -18,7 +18,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="@string/app_name"
+            app:title="Favorites"
             android:backgroundTint="#CC0000" />
 
     </android.support.design.widget.AppBarLayout>
@@ -27,40 +27,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-       <TextView
-           android:id="@+id/header"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="75dp"
-           android:paddingLeft="15dp"
-           android:paddingRight="15dp"
-           android:textSize="30sp"
-           android:text="Header Text View"/>
-
-        <TextView
-            android:id="@+id/subheader"
+        <GridView
+            android:id="@+id/favGridView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/header"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:textSize="15sp"
-            android:text="Here are a few suggestions" />
-
-        <GridView
-            android:id="@+id/gridview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:paddingTop="80dp"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:columnWidth="100dp"
-            android:numColumns="auto_fit"
-            android:verticalSpacing="5dp"
-            android:horizontalSpacing="5dp"
-            android:stretchMode="columnWidth"
-            android:gravity="center"
-            android:layout_below="@+id/subheader"
-            android:paddingTop="15dp"></GridView>
+            android:numColumns="3" >
+
+        </GridView>
 
     </RelativeLayout>
 
