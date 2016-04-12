@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">BU Eats</string>
     <string name="title_activity_favorite">FavoriteActivity</string>
+    <string name="title_activity_restaurant_web">RestaurantWeb</string>
+    <string name="title_activity_filter">Filter</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

@@ -15,6 +15,7 @@ public class RestaurantDBHelper extends SQLiteOpenHelper {
     public static final String FIELD2_NAME = "cuisine";
     public static final String FIELD3_NAME = "address";
     public static final String FIELD4_NAME = "phone";
+    public static final String FIELD8_NAME = "websiteURL";
     public static final String FIELD5_NAME = "rating";
     public static final String FIELD6_NAME = "imageId";
     public static final String FIELD7_NAME = "mealTime";
@@ -23,7 +24,7 @@ public class RestaurantDBHelper extends SQLiteOpenHelper {
     public static final String TABLE_SPECIFICATIONS =
             // form: "CREATE TABLE restaurants(id INTEGER PRIMARY KEY, name TEXT, cuisine TEXT, address TEXT, phone TEXT, rating INTEGER, imageName TEXT, mealTime INTEGER)"
             "CREATE TABLE " + RESTAURANT_TABLE_NAME + "(" +
-                    PRIMARY_KEY_NAME + " INTEGER PRIMARY KEY, " + FIELD1_NAME + " TEXT, " + FIELD2_NAME + " TEXT, " + FIELD3_NAME + " TEXT, " + FIELD4_NAME + " TEXT, " + FIELD5_NAME + " INTEGER, " + FIELD6_NAME + " INTEGER, " + FIELD7_NAME + " INTEGER)";
+                    PRIMARY_KEY_NAME + " INTEGER PRIMARY KEY, " + FIELD1_NAME + " TEXT, " + FIELD2_NAME + " TEXT, " + FIELD3_NAME + " TEXT, " + FIELD4_NAME + " TEXT, " + FIELD8_NAME + " TEXT, " + FIELD5_NAME + " INTEGER, " + FIELD6_NAME + " INTEGER, " + FIELD7_NAME + " INTEGER)";
 
     public RestaurantDBHelper(Context context) {
         // A database exists, named DATABASE_NAME, with TABLE_SPECIFICATIONS

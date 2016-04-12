@@ -34,6 +34,7 @@ public class FavoriteActivity extends AppCompatActivity {
                 RestaurantDBHelper.FIELD2_NAME,
                 RestaurantDBHelper.FIELD3_NAME,
                 RestaurantDBHelper.FIELD4_NAME,
+                RestaurantDBHelper.FIELD8_NAME,
                 RestaurantDBHelper.FIELD5_NAME,
                 RestaurantDBHelper.FIELD6_NAME,
                 RestaurantDBHelper.FIELD7_NAME};
@@ -60,10 +61,11 @@ public class FavoriteActivity extends AppCompatActivity {
             String restaurantCuisine = c.getString(c.getColumnIndexOrThrow(RestaurantDBHelper.FIELD2_NAME));
             String restaurantAddress = c.getString(c.getColumnIndexOrThrow(RestaurantDBHelper.FIELD3_NAME));
             String restaurantPhone = c.getString(c.getColumnIndexOrThrow(RestaurantDBHelper.FIELD4_NAME));
+            String restaurantWebsite = c.getString(c.getColumnIndexOrThrow(RestaurantDBHelper.FIELD8_NAME));
             int restaurantRating = c.getInt(c.getColumnIndexOrThrow(RestaurantDBHelper.FIELD5_NAME));
             int restaurantImageId = c.getInt(c.getColumnIndexOrThrow(RestaurantDBHelper.FIELD6_NAME));
             int restaurantMealTime = c.getInt(c.getColumnIndexOrThrow(RestaurantDBHelper.FIELD7_NAME));
-            favoriteRestaurants[count] = new Restaurant(restaurantName, restaurantCuisine, restaurantAddress, restaurantPhone, restaurantRating, restaurantImageId, restaurantMealTime);
+            favoriteRestaurants[count] = new Restaurant(restaurantName, restaurantCuisine, restaurantAddress, restaurantPhone, restaurantWebsite, restaurantRating, restaurantImageId, restaurantMealTime);
             count++;
             c.moveToNext();
         }

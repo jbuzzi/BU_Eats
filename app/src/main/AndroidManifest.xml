@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cs683.jbuzzi.bu_eats">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,7 +32,13 @@
         <activity
             android:name=".FavoriteActivity"
             android:label="@string/title_activity_favorite"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RestaurantWeb"
+            android:label="@string/title_activity_restaurant_web"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".FilterActivity" />
+        <activity android:name=".SearchResultsActivity"></activity>
     </application>
 
 </manifest>

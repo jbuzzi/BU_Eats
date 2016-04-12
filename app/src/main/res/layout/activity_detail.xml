@@ -69,15 +69,15 @@
         android:onClick="setAsFavorite"/>
 
     <Button
-        android:id="@+id/restaurantDirections"
+        android:id="@+id/restaurantWebsite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/resturantRatingBar"
         android:layout_marginTop="10dp"
-        android:text="Get Directions"
+        android:text="Visit Website"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:gravity="center"
-        android:onClick="getDirections"/>
+        android:onClick="visitWebsite"/>
 
 </LinearLayout>

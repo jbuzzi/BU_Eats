@@ -19,7 +19,7 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:title="@string/app_name"
-            android:backgroundTint="#CC0000" />
+            android:backgroundTint="?attr/colorPrimary" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -63,5 +63,15 @@
             android:paddingTop="15dp"></GridView>
 
     </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_menu_search"
+        android:onClick="filterOptions"
+        app:backgroundTint="?attr/colorAccent" />
 
 </android.support.design.widget.CoordinatorLayout>

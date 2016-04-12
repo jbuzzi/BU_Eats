@@ -8,15 +8,17 @@ public class Restaurant {
     String cuisine;
     String address;
     String phone;
+    String websiteURL;
     int rating;
     int imageId;
     int mealTime;
 
-    public Restaurant(String name, String cuisine, String address, String phone, int rating, int imageId, int mealTime) {
+    public Restaurant(String name, String cuisine, String address, String phone, String websiteURL, int rating, int imageId, int mealTime) {
         this.name = name;
         this.cuisine = cuisine;
         this.address = address;
         this.phone = phone;
+        this.websiteURL = websiteURL;
         this.rating = rating;
         this.imageId = imageId;
         this.mealTime = mealTime;
@@ -52,6 +54,14 @@ public class Restaurant {
 
     public String getPhone() {
         return phone;
+    }
+
+    public void setWebsiteURL(String websiteURL) {
+        this.websiteURL = websiteURL;
+    }
+
+    public String getWebsiteURL() {
+        return websiteURL;
     }
 
     public void setRating(int rating) {

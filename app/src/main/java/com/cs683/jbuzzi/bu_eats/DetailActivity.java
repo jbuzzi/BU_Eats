@@ -20,6 +20,7 @@ public class DetailActivity extends Activity {
     String cuisine;
     String address;
     String phone;
+    String websiteURL;
     int rating;
     int imageId;
     int mealTime;
@@ -36,11 +37,11 @@ public class DetailActivity extends Activity {
         // Get intent data
         Intent i = getIntent();
 
-        // Selected image id
         name = i.getExtras().getString("restaurantName");
         cuisine = i.getExtras().getString("restaurantCuisine");
         address = i.getExtras().getString("restaurantAddress");
         phone = i.getExtras().getString("restaurantPhone");
+        websiteURL = i.getExtras().getString("restaurantWebsite");
         rating = i.getExtras().getInt("restaurantRaiting");
         imageId = i.getExtras().getInt("restaurantImageId");
         mealTime = i.getExtras().getInt("restaurantMealTime");
@@ -139,7 +140,18 @@ public class DetailActivity extends Activity {
         }
     }
 
-    public void getDirections (View view) {
+    public void visitWebsite (View view) {
+        Intent i = new Intent(getApplicationContext(), RestaurantWeb.class);
 
+        // Pass restaurant info
+        i.putExtra("restaurantName", name);
+        i.putExtra("restaurantAddress", address);
+        i.putExtra("restaurantPhone", phone);
+        i.putExtra("restaurantWebsite", websiteURL);
+        i.putExtra("restaurantCuisine", cuisine);
+        i.putExtra("restaurantRaiting", rating);
+        i.putExtra("restaurantImageId", imageId);
+        i.putExtra("restaurantMealTime", mealTime);
+        startActivity(i);
     }
 }
