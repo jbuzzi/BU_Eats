@@ -61,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/resturantRatingBar"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="Set as Favorite"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -72,12 +72,26 @@
         android:id="@+id/restaurantWebsite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/resturantRatingBar"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/favorite"
+        android:layout_marginTop="5dp"
         android:text="Visit Website"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:gravity="center"
         android:onClick="visitWebsite"/>
+
+    <Button
+        android:id="@+id/restaurantDirections"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/restaurantWebsite"
+        android:layout_marginTop="5dp"
+        android:text="View on Map"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:onClick="getDirections"/>
+
+
 
 </LinearLayout>

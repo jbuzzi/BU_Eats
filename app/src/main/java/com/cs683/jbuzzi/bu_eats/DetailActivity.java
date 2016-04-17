@@ -13,6 +13,8 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Context;
+import android.net.Uri;
+import android.content.ComponentName;
 
 public class DetailActivity extends Activity {
     RestaurantDBHelper restaurantDBHelper;
@@ -152,6 +154,19 @@ public class DetailActivity extends Activity {
         i.putExtra("restaurantRaiting", rating);
         i.putExtra("restaurantImageId", imageId);
         i.putExtra("restaurantMealTime", mealTime);
+        startActivity(i);
+    }
+
+    public void getDirections (View view) {
+//        Intent intent = new Intent(Intent.ACTION_VIEW,
+//                Uri.parse("http://maps.google.com/maps?f=d&daddr=51.448,-0.972"));
+//        intent.setComponent(new ComponentName("com.google.android.apps.maps",
+//                "com.google.android.maps.MapsActivity"));
+//        startActivity(intent);
+
+        Intent i = new Intent(getApplicationContext(), MapsActivity.class);
+        i.putExtra("restaurantName", name);
+        i.putExtra("restaurantAddress", address);
         startActivity(i);
     }
 }
