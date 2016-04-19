@@ -5,6 +5,8 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,12 +29,16 @@ public class DetailActivity extends Activity {
     int imageId;
     int mealTime;
     Boolean isFavorite;
-
+    ConnectivityManager connManager;
+    NetworkInfo netInfo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        connManager = (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+        netInfo = connManager.getActiveNetworkInfo();
 
         restaurantDBHelper = new RestaurantDBHelper(getApplicationContext());
 
@@ -143,30 +149,36 @@ public class DetailActivity extends Activity {
     }
 
     public void visitWebsite (View view) {
-        Intent i = new Intent(getApplicationContext(), RestaurantWeb.class);
 
-        // Pass restaurant info
-        i.putExtra("restaurantName", name);
-        i.putExtra("restaurantAddress", address);
-        i.putExtra("restaurantPhone", phone);
-        i.putExtra("restaurantWebsite", websiteURL);
-        i.putExtra("restaurantCuisine", cuisine);
-        i.putExtra("restaurantRaiting", rating);
-        i.putExtra("restaurantImageId", imageId);
-        i.putExtra("restaurantMealTime", mealTime);
-        startActivity(i);
+        boolean isConnected = netInfo != null &&
+                netInfo.isConnectedOrConnecting();
+
+        if (isConnected) {
+            Intent i = new Intent(getApplicationContext(), RestaurantWeb.class);
+
+            // Pass restaurant info
+            i.putExtra("restaurantName", name);
+            i.putExtra("restaurantAddress", address);
+            i.putExtra("restaurantPhone", phone);
+            i.putExtra("restaurantWebsite", websiteURL);
+            i.putExtra("restaurantCuisine", cuisine);
+            i.putExtra("restaurantRaiting", rating);
+            i.putExtra("restaurantImageId", imageId);
+            i.putExtra("restaurantMealTime", mealTime);
+            startActivity(i);
+        } else {
+            toast(String.format("No Internet connection available. Connect online and try again later."));
+        }
     }
 
     public void getDirections (View view) {
-//        Intent intent = new Intent(Intent.ACTION_VIEW,
-//                Uri.parse("http://maps.google.com/maps?f=d&daddr=51.448,-0.972"));
-//        intent.setComponent(new ComponentName("com.google.android.apps.maps",
-//                "com.google.android.maps.MapsActivity"));
-//        startActivity(intent);
-
         Intent i = new Intent(getApplicationContext(), MapsActivity.class);
         i.putExtra("restaurantName", name);
         i.putExtra("restaurantAddress", address);
         startActivity(i);
+    }
+
+    private void toast(String aToast){
+        Toast.makeText(getApplicationContext(), aToast, Toast.LENGTH_LONG).show();
     }
 }

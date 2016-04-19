@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_marginTop="30dp"
-            android:text="Select Star Rating"
+            android:text="Select Minimum Star Rating"
             android:id="@+id/textView2"
             android:layout_below="@+id/radioButton5"
             android:layout_alignParentLeft="true"
