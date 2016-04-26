@@ -7,4 +7,9 @@
         android:orderInCategory="100"
         android:title="Favorites"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_feedback"
+        android:orderInCategory="100"
+        android:title="Feedback"
+        app:showAsAction="never" />
 </menu>

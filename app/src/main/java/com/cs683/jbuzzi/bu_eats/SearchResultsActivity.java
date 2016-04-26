@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
+import android.widget.RelativeLayout;
+import android.view.Gravity;
+
 import java.util.Vector;
 
 public class SearchResultsActivity extends AppCompatActivity {
@@ -58,27 +62,47 @@ public class SearchResultsActivity extends AppCompatActivity {
         final Restaurant[] finalResults = new Restaurant[results2.size()];
         results2.copyInto(finalResults);
 
-        //Set up restaurant grid view
-        GridView gridview = (GridView) findViewById(R.id.resultsGridView);
-        gridview.setAdapter(new CustomAdapter(this, finalResults));
+        if (finalResults.length == 0) {
+            RelativeLayout relativeLayout = new RelativeLayout(this);
 
-        //On item click
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                // Send intent to Detail Activity
-                Intent i = new Intent(getApplicationContext(), DetailActivity.class);
+            RelativeLayout.LayoutParams lParams = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.MATCH_PARENT,
+                    RelativeLayout.LayoutParams.MATCH_PARENT);
 
-                // Pass restaurant info
-                Restaurant selectedRestaurant = finalResults[position];
-                i.putExtra("restaurantName", selectedRestaurant.getName());
-                i.putExtra("restaurantAddress", selectedRestaurant.getAddress());
-                i.putExtra("restaurantPhone", selectedRestaurant.getPhone());
-                i.putExtra("restaurantCuisine", selectedRestaurant.getCuisine());
-                i.putExtra("restaurantRaiting", selectedRestaurant.getRating());
-                i.putExtra("restaurantImageId", selectedRestaurant.getImageId());
-                i.putExtra("restaurantMealTime", selectedRestaurant.getMealTime());
-                startActivity(i);
-            }
-        });
+            TextView text = new TextView(this);
+            text.setText("NO RESULTS FOUND\nPlease make sure to select some filters and try again.");
+            text.setPadding(30, 730, 25, 30);
+            text.setTextSize(17);
+            text.setGravity(Gravity.CENTER);
+            relativeLayout.addView(text);
+
+            CustomDrawableView customDrawableView = new CustomDrawableView(this);
+            relativeLayout.addView(customDrawableView);
+
+            setContentView(relativeLayout, lParams);
+        } else {
+            //Set up restaurant grid view
+            GridView gridview = (GridView) findViewById(R.id.resultsGridView);
+            gridview.setAdapter(new CustomAdapter(this, finalResults));
+
+            //On item click
+            gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                    // Send intent to Detail Activity
+                    Intent i = new Intent(getApplicationContext(), DetailActivity.class);
+
+                    // Pass restaurant info
+                    Restaurant selectedRestaurant = finalResults[position];
+                    i.putExtra("restaurantName", selectedRestaurant.getName());
+                    i.putExtra("restaurantAddress", selectedRestaurant.getAddress());
+                    i.putExtra("restaurantPhone", selectedRestaurant.getPhone());
+                    i.putExtra("restaurantCuisine", selectedRestaurant.getCuisine());
+                    i.putExtra("restaurantRaiting", selectedRestaurant.getRating());
+                    i.putExtra("restaurantImageId", selectedRestaurant.getImageId());
+                    i.putExtra("restaurantMealTime", selectedRestaurant.getMealTime());
+                    startActivity(i);
+                }
+            });
+        }
     }
 }

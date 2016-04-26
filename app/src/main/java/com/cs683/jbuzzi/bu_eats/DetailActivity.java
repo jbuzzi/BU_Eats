@@ -1,7 +1,9 @@
 package com.cs683.jbuzzi.bu_eats;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,8 +17,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Context;
-import android.net.Uri;
-import android.content.ComponentName;
+import android.content.DialogInterface.OnClickListener;
 
 public class DetailActivity extends Activity {
     RestaurantDBHelper restaurantDBHelper;
@@ -24,7 +25,7 @@ public class DetailActivity extends Activity {
     String cuisine;
     String address;
     String phone;
-    String websiteURL;
+    static String websiteURL;
     int rating;
     int imageId;
     int mealTime;
@@ -66,6 +67,16 @@ public class DetailActivity extends Activity {
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
         imageView.setImageResource(imageId);
         refreshFavoriteButton();
+
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        showAlert();
+                    }
+                },
+                7000
+        );
     }
 
     public void refreshFavoriteButton () {
@@ -180,5 +191,40 @@ public class DetailActivity extends Activity {
 
     private void toast(String aToast){
         Toast.makeText(getApplicationContext(), aToast, Toast.LENGTH_LONG).show();
+    }
+
+    private void showAlert () {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+
+                if (!isFinishing()) {
+                    new AlertDialog.Builder(DetailActivity.this)
+                            .setTitle("Like what you see?")
+                            .setMessage("Share this restaurant with friends and plan your next meal.")
+                            .setCancelable(true)
+                            .setNegativeButton("Cancel", new OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    //Dismiss
+                                }
+                            })
+                            .setPositiveButton("Share", new OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    shareText("Check out this place", "Just saw this restaurant on BU Eats we should check it out sometime " + websiteURL);
+                                }
+                            }).create().show();
+                }
+            }
+        });
+    }
+
+    private void shareText(String subject, String body) {
+        Intent txtIntent = new Intent(android.content.Intent.ACTION_SEND);
+        txtIntent .setType("text/plain");
+        txtIntent .putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
+        txtIntent .putExtra(android.content.Intent.EXTRA_TEXT, body);
+        startActivity(Intent.createChooser(txtIntent, "Share"));
     }
 }

@@ -13,6 +13,8 @@ import android.widget.GridView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.content.Intent;
+import android.widget.Toast;
+
 import java.util.Date;
 import java.util.Vector;
 import java.util.Calendar;
@@ -130,6 +132,8 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_favorites) {
             showFavorites();
             return true;
+        } if (id == R.id.action_feedback) {
+            sendFeedback();
         }
 
         return super.onOptionsItemSelected(item);
@@ -173,6 +177,20 @@ public class MainActivity extends AppCompatActivity {
         );
         AppIndex.AppIndexApi.end(client, viewAction);
         client.disconnect();
+    }
+
+    void sendFeedback() {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "App Feedback");
+        intent.putExtra(Intent.EXTRA_TEXT, "");
+        intent.setData(Uri.parse("mailto:feedback@BUEats.com"));
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        try {
+            startActivity(intent);
+        } catch (android.content.ActivityNotFoundException ex) {
+            toast("There are no email clients installed.");
+        }
     }
 
     void showFavorites() {
@@ -236,5 +254,9 @@ public class MainActivity extends AppCompatActivity {
 
         filteredRestaurants = new Restaurant[restaurantList.size()];
         restaurantList.copyInto(filteredRestaurants);
+    }
+
+    private void toast(String aToast){
+        Toast.makeText(getApplicationContext(), aToast, Toast.LENGTH_LONG).show();
     }
 }
